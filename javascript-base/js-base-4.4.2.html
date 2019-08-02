@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件</title>
+	<style type="text/css">
+		.panel{
+			width: 100px;
+			height: 100px;
+			background-color: #6f6;
+		}
+	</style>
+</head>
+<body onload="loadDome()" onunload="unLoadDome()">
+	<button onclick="dome()">按钮</button> 	
+	<script>
+		function dome(){//onclick事件
+			alert(12132132);
+		}
+	</script>
+
+	<div class="panel" onmouseover="onOver(this)" onmouseout="onOut(this)"></div>
+	<script>
+		function onOver(ooj){//onmouseover="" onmouseout=""
+			ooj.innerHTML="Hello";
+			ooj.style.background="#66ffff";
+		}
+		function onOut(ooj){
+			ooj.innerHTML="bye";
+			ooj.style.background="#66ff66";
+		}
+	</script>
+	<form>
+		<input type="text" id="" onchange="alert('内容改变了')"/>
+		<input type="text" id="" onselect ="selectDome(this)" onfocus="focusDome(this)" onblur="blurDome(this)" />
+	</form>
+	<script type="text/javascript">
+		// function changeDome(cont){
+		// 	alert("内容改变了");
+		// }
+		function selectDome(bg){
+			bg.style.background="#66ffff";
+		}
+		function focusDome(fo){
+			fo.style.background="#cc99ff";
+		}
+		function blurDome(bl){
+			bl.style.background="#fff";
+		}
+		function loadDome(){
+			alert("页面加载完毕");
+		}
+		function unLoadDome(){
+			alert("是否关闭页面");
+		} 
+	</script>
+
+</body>
+</html>

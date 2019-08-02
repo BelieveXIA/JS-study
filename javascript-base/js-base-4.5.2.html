@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用DOM操作HTML</title>
+</head>
+<body>
+	<p>1433233</p>
+	<p id="pid">123121321321</p>
+	<a href="https://www.bilibili.com/" id="aid" style="display: block;">点击跳转主页</a>
+	<img src="img/js事件.png" id="imgid"/>
+	<button onclick="dome()">按钮</button>
+
+	<script type="text/javascript">
+		//绝对不要在文档加载完毕后使用document.write(); 因为会覆盖文档
+		function dome(){
+			// document.write("Hello World!");//不能这样使用document.write();，否则会覆盖文档。
+			var v1=document.getElementById('pid').innerHTML="Hello World!"; //通过id寻找html元素  innerHTML改变html内容
+
+		    var v2=document.getElementsByTagName('p'); // 通过标签名获取html元素，获取到一个标签的数组
+		    var i=v2[0]; //取第一个标签
+		    i.innerHTML="my name is believe";
+
+		    var v3=document.getElementById('aid').href="https://juejin.im/post/5d35e74be51d45595319e405"; //改变HTML属性
+		    var v4=document.getElementById('imgid').src="img/js运算符.png";
+		}
+	</script>
+</body>
+</html>

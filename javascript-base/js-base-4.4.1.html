@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>异常捕捉</title>
+</head>
+<body>
+	<form>
+		<input type="text" id="txt"/>
+		<input type="button" id="btn" value="按钮" onclick="dome()"/>
+	</form>
+	<script>
+		function dome(){
+			try{//发生异常的代码块
+				var e =document.getElementById('txt').value;
+				if(e ==""){
+					throw "第一个输入框不能为空，请输入";
+				}				
+			}
+			catch (err){//错误信息处理
+				alert(err);				
+			}
+		}
+	</script>
+</body>
+</html>

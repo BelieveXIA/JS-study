@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理</title>
+</head>
+<body>
+	<button id="btn" >按钮</button><!--HTML事件处理是需要加上 onclick="dome()" -->
+	<!-- <script type="text/javascript">
+		function dome() {
+			alert("HTML事件处理,直接添加到HTML结构中");
+		}
+	</script> -->
+
+	<!-- <script type="text/javascript">
+		var bt=document.getElementById('btn');
+		bt.onclick = function(){alert("DOM0级事件处理，程序1")};//被覆盖掉
+		bt.onclick = function(){alert("DOM0级事件处理，程序2")};//被覆盖掉
+		bt.onclick = function(){alert("DOM0级事件处理，程序3")};//只会执行程序3
+		// bt.onclick = null; //注销清除onclick事件
+	</script> -->
+
+	<!-- <script type="text/javascript">
+		var bt=document.getElementById('btn');
+		bt.addEventListener("click",dome1);
+		bt.addEventListener("click",dome2);
+		bt.addEventListener("click",dome3);
+		function dome1(){
+			alert("DOM2级事件处理，程序1");
+		}
+		function dome2(){
+			alert("DOM2级事件处理，程序2");
+		}
+		function dome3(){
+			alert("DOM2级事件处理，程序3");//顺序执行，不会覆盖任何函数
+		}
+		bt.removeEventListener("click",dome2);//移除事件2
+	</script> -->
+
+	<script type="text/javascript">//处理各个浏览器兼容性时，以下写法
+		var bt=document.getElementById('btn');
+		if (bt.addEventListener) {
+			bt.addEventListener("click",dome); //大部分浏览器 支持DOM2级处理
+		}else if(bt.attachEvent){
+			bt.attachEvent("onclick",dome); //ie浏览器 例如ie8 浏览器
+		}else if(bt.onclick){
+			bt.onclick = dome(); //只支持DOM0级处理的浏览器
+		}
+		function dome(){
+			alert("Hello，欢迎动手尝试");
+		}
+	</script>
+</body>
+</html>

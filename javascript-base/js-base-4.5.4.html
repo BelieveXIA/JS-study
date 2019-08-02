@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM EventListener</title>
+</head>
+<body>
+	<button id="bid">按钮</button>
+	<script type="text/javascript">
+		var i = document.getElementById('bid');
+		i.addEventListener("click",dome1);
+		i.addEventListener("click",dome2);
+		// i.removeEventListener("click",dome1);
+		// i.removeEventListener("click",dome2);
+
+		function dome1() {
+			alert("Hello");
+		}
+		function dome2(){
+			alert("World");
+		}
+	</script>
+</body>
+</html>

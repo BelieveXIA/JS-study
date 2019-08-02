@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>返回函数</title>
+</head>
+<body>
+	<p id="abc"></p>
+	<script type="text/javascript">
+		function dome(a,b){
+			if (a>b) {
+				return "a比较大"; //return后不能再写语句，写了不会再执行
+			}
+			else{
+				return "b比较大";
+			}			
+		}
+		document.getElementById("abc").innerHTML= dome(100,20);		
+	</script>
+</body>
+</html>

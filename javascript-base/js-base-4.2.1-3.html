@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>赋值运算符</title>
+</head>
+<body>
+	<p>=,,+=,,-=,,*=,,/=,,%=</p>
+	<p id="show1"></p>
+	<p id="show2"></p>
+	<p id="show3"></p>
+	<p id="show4"></p>
+	<button onclick="btn()">按钮</button>
+	<script type="text/javascript">
+		function btn(){
+			var i=10;
+			var j=5;
+			j=i;
+
+			var a=10;
+			var b=5;
+			var c= a%=b; //a+=b = a=a+b ; a-=b = a=a-b ; a*=b = a=a*b ; a/=b = a=a/b ; a%=b = a=a%b 
+			document.getElementById("show1").innerHTML="i赋值j"+":"+j;
+			document.getElementById("show2").innerHTML=c;
+
+		}
+		
+		
+	</script>
+</body>
+</html>

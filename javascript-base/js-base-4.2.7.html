@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跳转语句 break，continue</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		for(i=0;i<10;i++){
+			if (i==5) {
+				break;//直接跳出本次for循环，后续的也不再执行，即i=5及以后的都不再执行
+			}
+			document.write("i="+i+"<br/>");
+		}
+		document.write("<br/>");
+		for(j=0;j<10;j++){
+			if (j==5) {
+				continue;//跳过本次j=5的循环，其余的i=6，7，8，9都会继续执行
+			}
+			document.write("j="+j+"<br/>");
+		}
+	</script>
+</body>
+</html>

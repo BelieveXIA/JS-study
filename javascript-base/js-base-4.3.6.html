@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>局部变量和全局变量</title>
+</head>
+<body>
+	<p id="abc"></p>
+	<script type="text/javascript">
+		var i=11; //全局变量 任何地方都能使用
+		m = 111; //全局变量
+		function dome(){
+			var a= 100; //局部变量 只能在所在的方法内使用
+			alert("局部变量a："+a);
+			x = 1; //全局变量，不过要调用方法dome(),才能使用的全局变量
+		}
+		alert("全局变量i："+i);
+		alert("全局变量m："+m);
+		dome();
+		// alert("局部变量a："+a);//无效弹窗
+		alert("全局变量x："+x);	
+	</script>
+</body>
+</html>

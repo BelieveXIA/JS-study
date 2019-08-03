@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象</title>
+</head>
+<body>
+	<div id="divid">
+		<button id="btn">按钮</button>
+		<a href="https://www.bilibili.com" id="aid">哔哩哔哩弹幕网</a>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('btn').addEventListener("click",dome1);
+		document.getElementById('divid').addEventListener("click",dome2);
+		document.getElementById('aid').addEventListener("click",dome3);
+		function dome1(event) {
+			alert(event.type); //获取事件类型“click”
+			event.stopPropagation(); //阻止事件冒泡
+		}
+		function dome2(event) {
+			alert(event.target); //获取事件目标，假如点击button，则找到所点击的元素，会返回“object HTMLButtonElement]”
+		}						//假如点击a元素，会返回a元素的“https://www.bilibili.com/”
+		function dome3(event){
+			alert("打开哔哩哔哩弹幕网");
+			event.stopPropagation(); //阻止事件冒泡
+			event.preventDefault(); //阻止事件默认行为
+		}
+	</script>
+</body>
+</html>

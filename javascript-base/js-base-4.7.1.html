@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象-创建对象</title>
+</head>
+<body>
+	<script>
+		// people = new Object(); //创建对象 方式一
+		// people.name = "believe"; //赋值
+		// people.age = "20";
+		// document.write("name:"+people.name+",age:"+people.age);
+
+		// people = {name:"muxuezhihan",age:"20"}; //方式二
+		// document.write("name:"+people.name+",age:"+people.age);
+
+		function dome(name,age){ //方式三
+			this.name1 = name;
+			this.age1 = age;
+		}
+		people = new dome("my name is believe",2000);
+		document.write("name:"+people.name1+",age:"+people.age1);
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String字符串对象</title>
+</head>
+<body>
+	<!-- 例举了一些，暂不全 -->
+	<script>
+		var str = "Hello world!";
+		document.write(str.length+"<br/>"); //打印 length 属性 12
+		document.write(str.prototype+"<br/>"); //打印 prototype 属性
+		document.write(str.constructor+"<br/>"); //打印 onstructor 属性
+
+		document.write(str.indexOf("llo")+"<br/>"); //在字符串中查找字符，返回字符开始的位置 返回 2
+		document.write(str.match("orm")+"<br/>"); //内容匹配，有则输出字符，么有返回 null
+
+		document.write(str.replace("world","believe")+"<br/>"); //替换内容
+
+		document.write(str.toUpperCase()+"<br/>"); //转换字符都为大写
+		document.write(str.toLowerCase()+"<br/>"); //转换字符都为小写
+
+		var st = str.split(" ");//把字符串转为数组，设定分隔符
+		document.write(st[1]); //输出数组的某一位
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date日期对象</title>
+</head>
+<body onload="startTime()">
+	<script>
+		// var time = new Date();
+		// document.write(time+"<br/>");
+		// document.write(time.getFullYear()+"<br/>");//获取完整的年份(4位)
+		// document.write(time.getMonth()+"<br/>");//获取当前月份(0-11,0代表1月)
+		// document.write(time.getDate()+"<br/>"); //获取当前日(1-31)
+
+		// document.write(time.getDay()+"<br/>");//获取当前星期X(0-6,0代表星期天)
+
+		// document.write(time.getHours()+"<br/>"); //获取当前小时数(0-23)
+		// document.write(time.getMinutes()+"<br/>");//获取当前分钟数(0-59)
+		// document.write(time.getSeconds()+"<br/>");//获取当前秒数(0-59)
+		// document.write(time.getMilliseconds()+"<br/>");//获取当前毫秒数(0-999)
+		// document.write(time.getTime()+"<br/>"); //获取当前时间(从1970.1.1开始的毫秒数)
+
+		// time.setFullYear(2020,10,21);
+		// document.write(time+"<br/>");
+
+		//时钟
+		function startTime(){
+			var today = new Date();
+			var h =today.getHours();
+			var m =today.getMinutes();
+			var s =today.getSeconds();
+			m =checkTime(m);
+			s =checkTime(s);
+			document.getElementById("did").innerHTML="时间："+h+":"+m+":"+s;
+			t = setTimeout(function(){
+				startTime();
+			},1000);
+		}
+		function checkTime(i){
+			if(i<10){
+				i = "0"+i;
+			}
+			return i;
+		}
+	</script>
+	<div id="did"></div>
+</body>
+</html>

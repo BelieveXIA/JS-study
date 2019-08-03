@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM对象控制html元素-1</title>
+</head>
+<body>
+	<p name="pn">Hello World!</p>
+	<p name="pn">Hello World!</p>
+	<p name="pn">Hello World!</p>
+	<a id="aid" title="我是a元素的titl属性"></a>
+	<a id="aid2"></a>
+	<ul><li>111111</li><li>2</li><li>3</li></ul>
+	<script>
+		// function getName() {
+		// 	var count =document.getElementsByName('pn');//获取name
+		// 	alert(count.length);
+		// 	var p =count[1];
+		// 	p.innerHTML="hello";
+		// }
+		// getName();
+
+		// function getAtt(){
+		// 	var att=document.getElementById('aid');
+		// 	var at =att.getAttribute("title");//获取元素属性
+		// 	alert(at);
+		// }
+		// getAtt();
+
+		// function setAtt(){
+		// 	var att=document.getElementById('aid2');
+		// 	att.setAttribute("title","我是新设置的title属性");//设置元素属性
+		// 	var at=att.getAttribute("title");
+		// 	alert(at);
+		// }
+		// setAtt();
+
+		function getchild(){
+			var childnode=document.getElementsByTagName('ul')[0].childNodes; //访问子节点
+			alert(childnode.length);
+			alert(childnode[0].nodeType);//获取节点类型，1代表元素节点，2：属性节点，3：文本节点，8：注释节点，9：文档节点
+		}
+		getchild();
+	</script>
+</body>
+</html>

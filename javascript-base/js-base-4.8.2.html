@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM对象控制html元素-2</title>
+</head>
+<body>
+	<div id="divid">
+		<p id="pid">Hello</p>
+	</div>
+	<script>
+		// function getParent(){//访问父节点
+		// 	var getP=document.getElementById('pid');
+		// 	alert(getP.innerHTML);
+		// 	alert(getP.parentNode.nodeName);
+		// }
+		// getParent();
+
+		function createNode(){//创建元素节点
+			var b=document.body;
+			var input=document.createElement("input");//创建元素节点
+			input.type="button";
+			input.value="按钮";
+			b.appendChild(input);//在末尾插入节点
+		}
+		createNode();
+
+		function createNode2(){//创建文本节点
+			var b=document.body;
+			var input=document.createTextNode("文本节点");//创建文本节点
+			b.appendChild(input);
+		}
+		createNode2();
+
+		function addNode(){//插入节点
+			var an=document.getElementById('divid');
+			var p=document.getElementById('pid');
+			var nodep=document.createElement("p");
+			nodep.innerHTML="动态添加的p元素";
+			an.insertBefore(nodep,p);//在（新元素，已存在元素）前插入
+		}
+		addNode();
+
+		function removeNode(){//移除节点
+			var an=document.getElementById('divid');
+			var p=an.removeChild(an.childNodes[2]);//这里直接是代表移除div内第二个子节点
+		}
+		removeNode();
+
+		function dome() {//网页尺寸 不包含外边距
+			var width=document.documentElement.offsetWidth||document.body.offsetWidth;//解决浏览器兼容性
+			var height=document.documentElement.offsetHeight||document.body.offsetHeight;
+			alert(width+","+height);
+		}
+		dome();
+
+		function dome1() {//网页尺寸 外边距+父元素的height
+			var width=document.documentElement.scrollWidth||document.body.scrollWidth;//解决浏览器兼容性
+			var height=document.documentElement.scrollHeight||document.body.scrollHeight;
+			alert(width+","+height);
+		}
+		dome1();
+	</script>
+</body>
+</html>

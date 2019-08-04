@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Location对象</title>
+</head>
+<body>
+	<button id="bid" onclick="getThing()">获取</button>
+	<button onclick="dome()">加载新文档</button>
+	<p id="pid1"></p>
+	<p id="pid2"></p>
+	<p id="pid3"></p>
+	<p id="pid4"></p>
+	<p id="pid5"></p>
+	<script>
+		function getThing(){
+			document.getElementById('pid1').innerHTML="web主机的域名："+window.location.hostname;//返回web主机的域名（localhost/127.0.0.1/....)
+			document.getElementById('pid2').innerHTML="当前页面的路径和文件名："+window.location.pathname;//返回当前页面的路径和文件名
+			document.getElementById('pid3').innerHTML="web主机的端口："+window.location.port;//返回web主机的端口(8080/...)
+			document.getElementById('pid4').innerHTML="所使用的web协议："+window.location.protocol;//返回所使用的web协议(http://,https://)
+			document.getElementById('pid5').innerHTML="当前页面的URL："+window.location.href;//返回当前页面的URL
+		}
+		function dome() {
+			location.assign("http://www.baidu.com");//加载新的文档
+		}
+
+	</script>
+</body>
+</html>

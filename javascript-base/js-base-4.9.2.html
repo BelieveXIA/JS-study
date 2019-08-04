@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器</title>
+</head>
+<body onload="setWin()">
+	<p id="pid"></p>
+	<button id="btn" onclick="stopTime()">停止</button>
+	<button id="btn-clear" onclick="clearWin()">清除</button>
+	<script>
+		//setInterval(),clearInterval()
+		var mytime =setInterval(function(){//间隔一秒运行一次，直接调用某方法，然后会一直间隔执行某方法
+			getTime();
+		},1000);
+
+		function getTime(){
+			var time =new Date();
+			var t =time.toLocaleTimeString();//转换为字符串，时间toLocaleTimeString(),日期toLocaleDateString()
+			document.getElementById('pid').innerHTML=t;
+		}
+		function stopTime() {//停止执行setInterval
+			clearInterval(mytime);
+		}
+
+		//setTimeout(),clearTimeout()
+		var win;
+		function setWin() {
+			//alert("Hello");//配合setWin()使用
+			win = setTimeout(function () {
+				//setWin();//递归，自己调自己，每隔两秒弹出一次，不建议使用这个用作循环
+				alert("Hello");//延时两秒弹出一次后结束程序
+			},2000);
+		}
+		function clearWin() {
+			clearTimeout(win);//清除延时
+		}
+	</script>
+</body>
+</html>

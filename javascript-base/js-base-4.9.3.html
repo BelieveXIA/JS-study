@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>History对象</title>
+</head>
+<body>
+	<button id="bid" onclick="goback()">上一个</button>
+	<form>
+		<input type="text" id="txt"/>
+	</form>
+	<button onclick="goGo()">提交</button>
+	<script>
+		//history.back()
+		function goback() {
+			history.back();//跳转回上一个网页
+		}
+
+		//history.go()
+		function goGo() {
+			var i =document.getElementById('txt').value;
+			if(i==1234){
+				history.go(-1);//相对当前页面1，刚才的"js-base-4.9.3-2.html"是-1页面。相当于验证密码成功返回首页功能
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象2</title>
+</head>
+<body>
+	<script>
+		(function(){//封装 ，信息隐藏
+			function Person(name) {//父方法
+			
+				var _this = {}; //创建一个空对象
+				_this._name =name;  //传参
+				_this.sayHello=function (){//通过对象来承载方法
+					alert("Hello "+_this._name);
+				}
+				return _this;//一定要返回对象
+			}
+			window.Person = Person;//因为封装了，赋值给窗口才执行
+		}());
+		
+		(function(){
+			function Teacher(name) {//子方法
+
+				var _this = Person(name);//_this对象继承Person()
+				var superSay =_this.sayHello;//赋值的方法调用父类方法
+				_this.sayHello=function (){//复写父类方法
+					superSay.call(_this); //强行调用父类方法
+					alert("Tea-Hello "+_this._name);
+				}
+				return _this;
+			}
+			window.Teacher = Teacher;
+		}());
+		var t = Teacher("believe");
+		t.sayHello();//调用方法
+	</script>
+</body>
+</html>

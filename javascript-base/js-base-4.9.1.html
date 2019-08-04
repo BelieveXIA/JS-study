@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器对象-window对象</title>
+</head>
+<body>
+	<button id="btn" onclick="openClick()">按钮</button>
+	<button id="btn" onclick="closeClick()">按钮</button>
+	<script>
+		
+		window.document.write("Hello");
+		document.write("宽度："+window.innerWidth+" 高度"+window.innerHeight);
+		
+		function openClick(){
+			window.open("js-base-4.7.5.html","windowname","height = 300,width = 300,top = 200,left = 200,toolbar=no,menubar=no");//打开一个网页("url","windowname","height = ,width = ,top = ,left = ,toolbar=no,menubar=no")
+		}
+		function closeClick() {
+			//window.open('https://www.baidu.com/','_parent','');//谷歌有时不能直接关闭页面，可以先打开一个页面在关闭
+			//window.open(" " , "_self");//解决谷歌兼容性，我也还没解决。。。
+			window.close();
+		}
+	</script>
+</body>
+</html>

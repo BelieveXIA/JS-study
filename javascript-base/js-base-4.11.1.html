@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>认识面向对象</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			
+		}
+		Person.prototype={
+			name:"believe";
+			age:20;
+			eat:function () {
+				alert("吃 技能");
+			}
+		}
+		var p=new Person();
+		p.name;
+		p.age;
+		p.eat();
+	</script>
+</body>
+</html>

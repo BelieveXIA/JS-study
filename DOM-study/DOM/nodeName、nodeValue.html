@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nodeName、nodeValue</title>
+</head>
+<body>
+	<!-- nodeName、nodeValue的用法 -->
+	<div id="container">这是一个元素节点</div>
+	<script type="text/javascript">
+		var divNode= document.getElementById('container'); //元素节点
+		console.log(divNode.nodeName+"/"+divNode.nodeValue);
+
+		var attrNode =divNode.attributes[0]; //属性节点
+		console.log(attrNode.nodeName+"/"+attrNode.nodeValue);
+
+		var textNode = divNode.childNodes[0]; //文本节点
+		console.log(textNode.nodeName+"/"+textNode.nodeValue);
+
+		var commentNode = document.body.childNodes[1]; //注释节点
+		console.log(commentNode.nodeName+"/"+commentNode.nodeValue);
+
+		console.log(document.doctype.nodeName+"/"+document.doctype.nodeValue); //文档类型节点
+		
+		var frag = document.createDocumentFragment(); //文档片段节点
+		console.log(frag.nodeName+"/"+frag.nodeValue);
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>window.onload</title>
+    <script>
+      window.onload = function(){ //这是加载完文档再运行js，文档多内容时不好用；而domready是在创建完节点树就开始运行js，比较适用大型项目
+        document.getElementById("header").style.color = "red";
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="header">这里是h1元素包含的内容</h1>
+  </body>
+</html>

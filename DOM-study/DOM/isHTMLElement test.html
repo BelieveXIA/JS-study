@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>isHTMLElement</title>
+</head>
+<body>
+	<div id="test">abcdefg</div><!-- 这是一个注释节点 -->
+	<script type="text/javascript">
+		var txtDiv = document.getElementById('test');
+		var isElement = function (obj){
+			if(obj && obj.nodeType===1){
+				if (window.Node && (obj instanceof Node)) {
+					return true;
+				} 
+				try{
+					txtDiv.appendChild(obj);//把获取到的添加进去
+					txtDiv.removeChild(obj);//再移除，假如都没有报错就是只有元素节点
+				} catch(e){
+					return false;//报错返回false
+				}
+				return true;
+			}
+			return false;
+		}
+		var isXML = function(doc){
+			return doc.createElement('p').nodeName !== doc.createElement('P').nodeName;
+		}
+		var isHTMLElement = function(el){//暂时没懂，好像有问题这里
+			if (isElement(el)) {
+				return isXML(el.ownerDocument);
+			}
+			return false;
+		}
+		console.log(isElement(document.getElementById('test')));
+		console.log(isElement(document.getElementById('test').nextSibling));
+		console.log(isXML(document));
+		console.log(isHTMLElement(document));
+	</script>
+</body>
+</html>

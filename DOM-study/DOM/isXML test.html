@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>isXML</title>
+</head>
+<body>
+	<div id="test">abcdefg</div><!-- 这是一个注释节点 -->
+
+	<!-- 属性法1 -->
+	<!-- <script>
+		//Sizzle, jQuery自带的选择器引擎
+		var isXML = function(elem) {
+		    var documentElement = elem && (elem.ownerDocument || elem).documentElement;
+		    return documentElement ? documentElement.nodeName !== "HTML" : false;
+		};
+		console.log(isXML(document.getElementById("test")));
+
+		//但这样不严谨，因为XML的根节点，也可能是HTML标签，比如这样创建一个XML文档
+		try {
+		    var doc = document.implementation.createDocument(null, 'HTML', null);
+		    console.log(doc.documentElement);
+		    console.log(isXML(doc));
+		} catch (e) {
+		    console.log("不支持creatDocument方法");
+		}
+	</script> -->
+
+	<!-- 属性法2 -->
+	<!-- <script>
+		//mootools的slick选择器引擎的源码：
+		var isXML = function(document) {
+		    return (!!document.xmlVersion) || (!!document.xml) || (toString.call(document) == '[object XMLDocument]')
+		            || (document.nodeType == 9 && document.documentElement.nodeName != 'HTML');
+		};
+
+		//精简版
+		var isXML = window.HTMLDocument ? function(doc) {
+		    return !(doc instanceof HTMLDocument);
+		} : function(doc) {
+		    return "selectNodes" in doc;
+		}
+	</script> -->
+
+	<!-- 功能法 -->
+	<script>
+		//最为严谨的XML文档判断方法了
+		var isXML = function(doc) {
+		    return doc.createElement("p").nodeName !== doc.createElement("P").nodeName;
+		}
+		console.log(isXML(document));
+
+		//最为严谨的HTML文档判断方法了
+		var isHTML = function(doc) {
+		    return doc.createElement("p").nodeName === doc.createElement("P").nodeName;
+		}
+		console.log(isHTML(document));			
+	</script>
+</body>
+</body>
+</html>

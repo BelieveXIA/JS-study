@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>isElement</title>
+</head>
+<body>
+	<div id="txt">abcdefg</div><!-- 这是一个注释节点 -->
+	<script type="text/javascript">
+		// //这个方法不够严谨，
+		// var isElement = function (el) {
+		// 	return !!el && el.nodeType === 1;
+		// }
+		// var a= {//这个可以伪造一个假的节点，瞒过isElement
+		// 	nodeType: 1
+		// }
+		// console.log(isElement(document.getElementById('txt')));
+		// console.log(isElement(document.getElementById('txt').nextSibling));
+		// console.log(isElement(a));
+
+		//以下的方法虽然繁琐，但是较为完美的判断节点是元素节点
+		var txtDiv = document.getElementById('txt');
+		var isElement = function (obj){
+			if(obj && obj.nodeType===1){
+				if (window.Node && (obj instanceof Node)) {
+					return true;
+				} 
+				try{
+					txtDiv.appendChild(obj);//把获取到的添加进去
+					txtDiv.removeChild(obj);//再移除，假如都没有报错就是只有元素节点
+				} catch(e){
+					return false;//报错返回false
+				}
+				return true;
+			}
+			return false;
+		}
+		var a= { 	
+			nodeType: 1
+		 }
+		console.log(isElement(document.getElementById('txt')));
+		console.log(isElement(document.getElementById('txt').nextSibling));
+		console.log(isElement(a));
+	</script>
+</body>
+</html>

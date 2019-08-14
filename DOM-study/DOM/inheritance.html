@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM inheritance hierarchy</title>
+</head>
+<body>
+	<script>
+		console.log(Object.getOwnPropertyNames(document.createElement("p").__proto__));
+		//第一层原有的属性，不包括自定义属性
+		console.log(Object.getOwnPropertyNames(document.createElement("p").__proto__.__proto__));
+		//上一层的原型链属性
+	</script>
+</body>
+</html>

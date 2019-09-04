@@ -18,11 +18,11 @@
 			var ci=100;
 			var di=100;
 
-			var a=++ai; //先++i=i+1
-			var b=bi++; //先b=bi，然后这个bi=bi+1
+			var a=++ai; //先++i=i+1  //a=101
+			var b=bi++; //先b=bi   ///b=100,然后这个bi=bi+1    //bi=101
 
-			var c=--ci; //先--i=i-1
-			var d=di--; //先d=di,然后这个di=di-1
+			var c=--ci; //先--i=i-1  //c=99
+			var d=di--; //先d=di  //d=100  ,后这个di=di-1    //di=99
 			document.getElementById("show1").innerHTML="a=++i"+":"+a;
 			document.getElementById("show2").innerHTML="b=i++"+":"+b;
 			document.getElementById("show3").innerHTML="c=--i"+":"+c;

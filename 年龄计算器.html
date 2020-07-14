@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>编程练习</title>
+	<link rel="stylesheet" type="text/css" href=""/>
+	
+</head>
+<body>
+	<div class="ageNode"></div>
+	
+	<script type="text/javascript">
+		/*jshint esversion: 6 */
+		class Nowage{
+			constroct(){
+				this._age = 18;
+			}
+			get age(){
+				return this._age;
+			}
+			set age(val){
+				// this.age = val;
+				if(val.length === 4){
+					this._age = new Date().getFullYear()-val;
+				}else{
+					this._age = 18;
+				}
+				let ageNode = document.querySelector(".ageNode");
+				ageNode.innerHTML = `当前年龄是：${ this._age}`;
+			}
+		}
+		let year = prompt("请输入出生年份：");
+		let nowAge = new Nowage();
+		nowAge.age = year;
+		console.log(year);
+</script>
+</body>
+</html>

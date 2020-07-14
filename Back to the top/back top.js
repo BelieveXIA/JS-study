@@ -19,7 +19,7 @@ window.onload =function () {
 			clearInterval(backtoptime);
 		}
 		isTop = false;
-	}
+	};
 
 	backbtn.onclick = function(){
 		//alert(clientHeight);
@@ -38,5 +38,5 @@ window.onload =function () {
 				clearInterval(backtoptime);
 			}
 		},30);
-	}
-}
+	};
+};
